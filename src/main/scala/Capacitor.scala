@@ -37,20 +37,20 @@ object Capacitor {
         }
         
         // Parse
-        parser.parse(args, Config()) map { config =>
-            println(config.hostname)
-            println(config.user)
-            println(config.numberOfPages)
-            println(config.numberOfFilesPerPage)
-            println(config.numberOfRevisionsPerFile)
-        }
+        val optionConfig = parser.parse(args, Config())
+        if(optionConfig == None)
+            return
+         val config = optionConfig.get
+        // val h = host(config.hostname)
+        // val resp = h.GET
+        // println(resp)
         
         // Establish connection
         
         // Create root page
         
         // Create the other pages
-        (1 .. config.numberOfPages).par.map()
+        // (1 .. config.numberOfPages).par.map()
         
         // Create the files
         
